@@ -42,6 +42,9 @@ public void SetCrashScreen()
     {
         // Deactivate all objects in the prefab
         smokeEffect.SetActive(false);
+		if (audioData != null) {
+			audioData.Stop ();
+		}
     }
 }
 

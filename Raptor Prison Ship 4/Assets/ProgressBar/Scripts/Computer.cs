@@ -137,7 +137,6 @@ public class Computer : MonoBehaviour
 	{
 		if (_state == ComputerState.Crashed || _state == ComputerState.RaptorCrashingComputer) {
 			_state = ComputerState.Rebooting;
-			CC.CancelCrashEffects ();
 			_crashTimer =  rebootTime;
 			_timerLength = _crashTimer;
 			pBar.gameObject.SetActive (true);
@@ -169,6 +168,7 @@ public class Computer : MonoBehaviour
 				currentRaptorUser.FindNewTarget ();
 			} else if (_state == ComputerState.Rebooting) {
 				SetComputerColour (Color.white);
+				CC.CancelCrashEffects ();
 				_state = ComputerState.WaitingToCrash;
 				pBar.progress = 0;
 				pBar.gameObject.SetActive (false);
