@@ -10,11 +10,8 @@ public class CrashController : MonoBehaviour
     public GameObject explosionEffectPrefab;
     // public GameObject countdownStressSound;  // not sure if I need this - trying to set audioclip objects maybe?
   
-   AudioSource audio;
+   AudioSource audioData;
 
-void start(){
-audioData = GetComponents<AudioSource>();
-}
 
 public void SetCrashScreen()
     {
