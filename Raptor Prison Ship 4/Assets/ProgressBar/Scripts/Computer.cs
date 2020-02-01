@@ -21,6 +21,9 @@ public class Computer : MonoBehaviour
 		Exploding
 	}
 
+	[SerializeField]
+	private CrashController CC;
+
 	public int computerID;
 	public ComputerType computerType;
 	public float rebootTime = 5f;
@@ -34,6 +37,7 @@ public class Computer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		CC = GetComponent<CrashController> ();
 		CM = FindObjectOfType<ComputerManager> ();
 
 		if (computerID == 0) {
@@ -152,9 +156,11 @@ public class Computer : MonoBehaviour
 			} else if (_state == ComputerState.Exploding) {
 				Application.Quit ();
 			}
-
-
+		} else if (_state == ComputerState.Crashed && _crashTimer < CM.TimeFromCrashToExplode - 5f) {
+			CC.StartSmokingEffect ();
 		}
+
+
     }
 }
 

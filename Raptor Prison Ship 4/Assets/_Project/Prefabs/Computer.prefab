@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 170782936638327825}
   - component: {fileID: 6837681287637661748}
   - component: {fileID: 4517472496293523106}
+  - component: {fileID: -302944993210790898}
+  - component: {fileID: -2308226624588467095}
   m_Layer: 11
   m_Name: Computer
   m_TagString: Untagged
@@ -108,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   computerID: 80
   computerType: 1
+  rebootTime: 5
   _state: 3
   _crashTimer: 0
 --- !u!135 &4517472496293523106
@@ -139,3 +142,19 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &-2308226624588467095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800421250327628403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4cac51bfa3dd441db4369cf5633941f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeEffect: {fileID: 8997389546239721030, guid: bc3b7ea9080f14da3babb93b2e2432b5,
+    type: 3}
+  explosionEffectPrefab: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976,
+    type: 3}
