@@ -18,7 +18,7 @@ public class RaptorAI : MonoBehaviour
 
 	public float timeToEducate = 5f;
 
-	public GameObject RaptorHappyPlace;
+	public Computer RaptorHappyPlace;
 
 	public RaptorState _rState;
 
@@ -117,7 +117,9 @@ public class RaptorAI : MonoBehaviour
 			if (_RaptorTimer < 0) {
 				_rState = RaptorState.Content;
 				pBar.gameObject.SetActive (false);
-				raptorAgent.SetDestination (RaptorHappyPlace.transform.position);
+				raptorAgent.SetDestination (RaptorHappyPlace.gameObject.transform.position);
+				targettedComputer = RaptorHappyPlace;
+				targettedLocation = RaptorHappyPlace.gameObject;
 				// Need to tell the player that the lesson is over.
 				FindObjectOfType<PlayerControl> ().LessonOver ();
 			}
