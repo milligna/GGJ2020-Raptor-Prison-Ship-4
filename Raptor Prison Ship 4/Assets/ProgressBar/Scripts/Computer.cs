@@ -177,11 +177,11 @@ public class Computer : MonoBehaviour
 			} else if (_state == ComputerState.Exploding) {
 				Application.Quit ();
 			}
+		} else if (_state == ComputerState.Crashed && _crashTimer < CC.audioData.clip.length && !CC.audioData.isPlaying) {
+			CC.TriggerCountdownAudio ();
 		} else if (_state == ComputerState.Crashed && _crashTimer < CM.TimeFromCrashToExplode - 5f) {
 			CC.StartSmokingEffect ();
 		}
-
-
     }
 }
 
