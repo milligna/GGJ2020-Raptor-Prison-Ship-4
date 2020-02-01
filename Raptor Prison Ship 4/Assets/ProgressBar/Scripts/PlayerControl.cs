@@ -64,7 +64,11 @@ public class PlayerControl : MonoBehaviour
 
 	public void UseComputerTool (int toolID)
 	{
-		if (toolID == (int)currentComputer.computerType) {
+		// Just incase the computer blew up before a tool was selected
+		if (currentComputer._state == Computer.ComputerState.Exploding) {
+			_pState = playerState.Moving;
+		}
+		else if (toolID == (int)currentComputer.computerType) {
 			currentComputer.rebootComputer ();
 		} else {
 			_pState = playerState.Moving;
@@ -76,8 +80,14 @@ public class PlayerControl : MonoBehaviour
 
 	public void UseRaptorTool (int toolID)
 	{
-		currentRaptor.Tooled (toolID);
-		_pState = playerState.TrainingRaptor;
+		int result = currentRaptor.Tooled (toolID);
+
+		// Using the stick
+		if (result == 0)
+			_pState = playerState.Moving;
+		else if (result == 1)	// Training the raptor properly
+			_pState = playerState.TrainingRaptor;
+		
 		HideRaptorTools ();
 	}
 
@@ -115,7 +125,7 @@ public class PlayerControl : MonoBehaviour
 						currentRaptor = rayResult.collider.gameObject.GetComponent<RaptorAI> ();
 
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
-							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithTarget) {
+							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
 								ShowRaptorTools ();
 							}
 						}

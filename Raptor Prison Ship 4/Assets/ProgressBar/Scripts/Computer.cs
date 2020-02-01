@@ -102,7 +102,7 @@ public class Computer : MonoBehaviour
 			_crashTimer = CM.TimeToCrashWithRaptor;
 			_timerLength = _crashTimer;
 			pBar.gameObject.SetActive (true);
-			raptor._rState = RaptorAI.RaptorState.FiddlingWithTarget;
+			raptor._rState = RaptorAI.RaptorState.FiddlingWithComputer;
 			currentRaptorUser = raptor;
 		}
 	}
@@ -171,6 +171,12 @@ public class Computer : MonoBehaviour
 				_state = ComputerState.Exploding;
 				CC.TriggerExplosionEffect ();
 				SetComputerColour (Color.black);
+				// If user was in the process of selecting a tool to use on the computer, need to reset the player
+				PlayerControl PC = FindObjectOfType<PlayerControl> ();
+				if (PC._pState == PlayerControl.playerState.SelectComputerTool && PC.targettedComputer == computerID ) {
+					// select a non-existant tool which is the same as essentially cancelling the tool selection
+					PC.UseComputerTool (-1);
+				}
 				_crashTimer = CM.TimeToEndGame;
 				// TODO
 			} else if (_state == ComputerState.RaptorCrashingComputer) {

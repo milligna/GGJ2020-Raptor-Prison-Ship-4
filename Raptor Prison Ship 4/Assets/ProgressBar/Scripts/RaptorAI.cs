@@ -8,12 +8,13 @@ public class RaptorAI : MonoBehaviour
 	public enum RaptorState {
 		Imprisoned,
 		HeadingToTarget,
-		FiddlingWithTarget,
+		FiddlingWithComputer,
+		WastingTime,
 		Learning,
 		Content
 	}
 
-	private float _RaptorTimer;
+	public float _RaptorTimer;
 
 	public float timeToEducate = 5f;
 
@@ -23,6 +24,8 @@ public class RaptorAI : MonoBehaviour
 
 	[SerializeField]
 	private LinearProgressBarController pBar;
+
+	public float laziness = 7.5f;
 
 	public Computer targettedComputer;
 	public GameObject targettedLocation;
@@ -46,10 +49,13 @@ public class RaptorAI : MonoBehaviour
 
 	public void ArrivedAtLocation ()
 	{
-		_rState = RaptorState.FiddlingWithTarget;
+		_rState = RaptorState.WastingTime;
+		_RaptorTimer = laziness;
+		targettedLocation = null;
+		targettedComputer = null;
 	}
 
-	public void Tooled (int toolID)
+	public int Tooled (int toolID)
 	{
 		if (targettedComputer != null) {
 			if (toolID == 0) {
@@ -58,6 +64,7 @@ public class RaptorAI : MonoBehaviour
 
 				targettedComputer = null;
 				targettedLocation = null;
+				return 0;
 
 			} else if (toolID == 1) {
 				_rState = RaptorState.Learning;
@@ -66,8 +73,11 @@ public class RaptorAI : MonoBehaviour
 				targettedComputer.RaptorInterferenceInterferedWith ();
 				targettedComputer = null;
 				targettedLocation = null;
+				return 1;
 			}
-		}
+			return -1;
+		} else
+			return -1;
 	}
 
 	public void FindNewTarget ()
@@ -88,7 +98,7 @@ public class RaptorAI : MonoBehaviour
     {
 		_RaptorTimer -= Time.deltaTime;
 
-		if (_RaptorTimer < 0 && _rState == RaptorState.Imprisoned) {
+		if (_RaptorTimer < 0 && (_rState == RaptorState.Imprisoned || _rState == RaptorState.WastingTime)) {
 			_rState = RaptorState.HeadingToTarget;
 		}
 
@@ -110,7 +120,6 @@ public class RaptorAI : MonoBehaviour
 				raptorAgent.SetDestination (RaptorHappyPlace.transform.position);
 				// Need to tell the player that the lesson is over.
 				FindObjectOfType<PlayerControl> ().LessonOver ();
-				Debug.Log ("here");
 			}
 		}
     }
