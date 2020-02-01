@@ -62,7 +62,9 @@ public class Computer : MonoBehaviour
 		// If we've already clicked on the computer before being in range
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Player")) {
 			if (other.gameObject.GetComponent<PlayerControl> ().targettedComputer == computerID) {
-				rebootComputer ();
+				if (_state == ComputerState.Crashed) {
+					other.gameObject.GetComponent<PlayerControl> ().ShowComputerTools ();
+				}
 			}
 		} else if(other.gameObject.layer == LayerMask.NameToLayer("Raptor")) {
 			if ( other.gameObject.GetComponent<RaptorAI> ().targettedComputer == this ) {
@@ -143,6 +145,15 @@ public class Computer : MonoBehaviour
 			SetComputerColour (Color.green);
 			FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.RebootingComputer;
 		}
+	}
+
+	public void RaptorInterferenceInterferedWith ()
+	{
+		_state = ComputerState.WaitingToCrash;
+		pBar.progress = 0;
+		pBar.gameObject.SetActive (false);
+		currentRaptorUser = null;
+		_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
 	}
 
     // Update is called once per frame

@@ -9,12 +9,20 @@ public class RaptorAI : MonoBehaviour
 		Imprisoned,
 		HeadingToTarget,
 		FiddlingWithTarget,
+		Learning,
 		Content
 	}
 
 	private float _RaptorTimer;
 
+	public float timeToEducate = 5f;
+
+	public GameObject RaptorHappyPlace;
+
 	public RaptorState _rState;
+
+	[SerializeField]
+	private LinearProgressBarController pBar;
 
 	public Computer targettedComputer;
 	public GameObject targettedLocation;
@@ -41,7 +49,26 @@ public class RaptorAI : MonoBehaviour
 		_rState = RaptorState.FiddlingWithTarget;
 	}
 
+	public void Tooled (int toolID)
+	{
+		if (targettedComputer != null) {
+			if (toolID == 0) {
+				_rState = RaptorState.HeadingToTarget;
+				targettedComputer.RaptorInterferenceInterferedWith ();
 
+				targettedComputer = null;
+				targettedLocation = null;
+
+			} else if (toolID == 1) {
+				_rState = RaptorState.Learning;
+				pBar.gameObject.SetActive (true);
+				_RaptorTimer = timeToEducate;
+				targettedComputer.RaptorInterferenceInterferedWith ();
+				targettedComputer = null;
+				targettedLocation = null;
+			}
+		}
+	}
 
 	public void FindNewTarget ()
 	{
@@ -65,8 +92,7 @@ public class RaptorAI : MonoBehaviour
 			_rState = RaptorState.HeadingToTarget;
 		}
 
-		if(_rState == RaptorState.HeadingToTarget )
-		{
+		if (_rState == RaptorState.HeadingToTarget) {
 			if (targettedLocation == null) {
 				FindNewTarget ();
 			} else {
@@ -75,6 +101,16 @@ public class RaptorAI : MonoBehaviour
 						FindNewTarget ();
 					}
 				}
+			}
+		} else if (_rState == RaptorState.Learning) {
+			pBar.progress = ((timeToEducate - _RaptorTimer) / timeToEducate) * 100;
+			if (_RaptorTimer < 0) {
+				_rState = RaptorState.Content;
+				pBar.gameObject.SetActive (false);
+				raptorAgent.SetDestination (RaptorHappyPlace.transform.position);
+				// Need to tell the player that the lesson is over.
+				FindObjectOfType<PlayerControl> ().LessonOver ();
+				Debug.Log ("here");
 			}
 		}
     }

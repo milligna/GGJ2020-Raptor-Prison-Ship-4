@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
 	public enum playerState {
 		Moving,
 		TrainingRaptor,
+		SelectRaptorTool,
+		SelectComputerTool,
 		RebootingComputer
 	}
 
@@ -18,6 +21,13 @@ public class PlayerControl : MonoBehaviour
 	public float PlayerComputerInteraction = 2.0f;	// Should be about the same as the computer's trigger colliders diameter/radius??
 
 	public int targettedComputer = 0;
+	private Computer currentComputer;
+	private RaptorAI currentRaptor;
+
+	[SerializeField]
+	private RectTransform ComputerToolsPanel;
+	[SerializeField]
+	private RectTransform RaptorToolsPanel;
 
 	private int ClickLayerMask;
 
@@ -26,8 +36,57 @@ public class PlayerControl : MonoBehaviour
     {
 		_pState = playerState.Moving;
 		targettedComputer = 0;  // Not aiming at a computer
-		ClickLayerMask = LayerMask.GetMask ("Floor", "Computer");
+		ClickLayerMask = LayerMask.GetMask ("Floor", "Computer", "Raptor");
     }
+
+	public void ShowComputerTools ()
+	{
+		_pState = playerState.SelectComputerTool;
+		ComputerToolsPanel.gameObject.SetActive (true);
+	}
+
+	public void HideComputerTools ()
+	{
+		ComputerToolsPanel.gameObject.SetActive (false);
+	}
+
+	public void ShowRaptorTools ()
+	{
+		_pState = playerState.SelectRaptorTool;
+		RaptorToolsPanel.gameObject.SetActive (true);
+	}
+
+	public void HideRaptorTools ()
+	{
+		RaptorToolsPanel.gameObject.SetActive (false);
+
+	}
+
+	public void UseComputerTool (int toolID)
+	{
+		if (toolID == (int)currentComputer.computerType) {
+			currentComputer.rebootComputer ();
+		} else {
+			_pState = playerState.Moving;
+		}
+		currentComputer = null;
+		targettedComputer = 0;
+		HideComputerTools ();
+	}
+
+	public void UseRaptorTool (int toolID)
+	{
+		currentRaptor.Tooled (toolID);
+		_pState = playerState.TrainingRaptor;
+		HideRaptorTools ();
+	}
+
+	public void LessonOver ()
+	{
+		_pState = playerState.Moving;
+		currentRaptor = null;
+
+	}
 
 	// Update is called once per frame
 	void Update()
@@ -42,19 +101,29 @@ public class PlayerControl : MonoBehaviour
 					player.SetDestination (rayResult.point);
 
 					if (rayResult.collider.gameObject.layer == LayerMask.NameToLayer ("Computer")) {
-						Computer touchedComputer = rayResult.collider.gameObject.GetComponent<Computer> ();
-						targettedComputer = touchedComputer.computerID;
+						currentComputer = rayResult.collider.gameObject.GetComponent<Computer> ();
+						targettedComputer = currentComputer.computerID;
+						currentRaptor = null;
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
-							if (touchedComputer._state == Computer.ComputerState.Crashed) {
-								_pState = playerState.RebootingComputer;
-								touchedComputer.rebootComputer ();
+							if (currentComputer._state == Computer.ComputerState.Crashed) {
+								ShowComputerTools ();
 							}
 						}
+					} else if (rayResult.collider.gameObject.layer == LayerMask.NameToLayer ("Raptor")) {
+						targettedComputer = 0;
+						currentComputer = null;
+						currentRaptor = rayResult.collider.gameObject.GetComponent<RaptorAI> ();
+
+						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
+							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithTarget) {
+								ShowRaptorTools ();
+							}
+						}
+
 					} else {
 						targettedComputer = 0;
+						currentComputer = null;
 					}
-
-
 				}
 			}
 		}
