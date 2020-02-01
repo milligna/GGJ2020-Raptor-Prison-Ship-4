@@ -45,8 +45,10 @@ public class PlayerControl : MonoBehaviour
 						Computer touchedComputer = rayResult.collider.gameObject.GetComponent<Computer> ();
 						targettedComputer = touchedComputer.computerID;
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
-							_pState = playerState.RebootingComputer;
-							touchedComputer.rebootComputer ();
+							if (touchedComputer._state == Computer.ComputerState.Crashed) {
+								_pState = playerState.RebootingComputer;
+								touchedComputer.rebootComputer ();
+							}
 						}
 					} else {
 						targettedComputer = 0;
