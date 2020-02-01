@@ -42,7 +42,7 @@ public class Computer : MonoBehaviour
 	{
 		// If we've already clicked on the computer before being in range
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Player")) {
-			if (other.gameObject.GetComponent<InputControl> ().targettedComputer == computerID) {
+			if (other.gameObject.GetComponent<PlayerControl> ().targettedComputer == computerID) {
 				rebootComputer ();
 			}
 		} else if(other.gameObject.layer == LayerMask.NameToLayer("Raptor")) {

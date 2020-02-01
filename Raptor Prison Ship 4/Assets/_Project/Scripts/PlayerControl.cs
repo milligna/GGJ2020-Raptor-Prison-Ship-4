@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class InputControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
 	public NavMeshAgent player;
 
