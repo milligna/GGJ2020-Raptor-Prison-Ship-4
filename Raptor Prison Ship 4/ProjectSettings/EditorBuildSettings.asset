@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/PetersScene.unity
     guid: 12b4759f17c2c44b59f57a5dc013ca45
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Menu.unity
+    guid: 3c7fdddb8300fd648a15e764ca313c35
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Main.unity
+    guid: ed2d38b43d3ad0a4894a1116a1877d0c
   m_configObjects: {}
