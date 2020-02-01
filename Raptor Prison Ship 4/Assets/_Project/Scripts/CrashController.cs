@@ -36,6 +36,7 @@ public class CrashController : MonoBehaviour
     void CancelCrashEffects()
     {
         // Deactivate all objects in the prefab
+        smokeEffect.SetActive(false);
     }
 }
 
