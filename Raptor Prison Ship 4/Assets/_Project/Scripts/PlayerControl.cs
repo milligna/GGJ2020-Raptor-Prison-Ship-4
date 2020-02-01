@@ -11,10 +11,13 @@ public class PlayerControl : MonoBehaviour
 
 	public int targettedComputer = 0;
 
+	private int ClickLayerMask;
+
     // Start is called before the first frame update
     void Start()
     {
-		targettedComputer = 0;	// Not aiming at a computer
+		targettedComputer = 0;  // Not aiming at a computer
+		ClickLayerMask = LayerMask.GetMask ("Floor", "Computer");
     }
 
 	// Update is called once per frame
@@ -24,7 +27,7 @@ public class PlayerControl : MonoBehaviour
 			Ray raything = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit rayResult;
 
-			if (Physics.Raycast (raything, out rayResult)) {
+			if (Physics.Raycast (raything, out rayResult, 200f, ClickLayerMask )) {
 				player.SetDestination (rayResult.point);
 
 				if (rayResult.collider.gameObject.layer == LayerMask.NameToLayer ("Computer")) {
