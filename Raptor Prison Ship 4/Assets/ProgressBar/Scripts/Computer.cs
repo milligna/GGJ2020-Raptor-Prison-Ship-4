@@ -23,6 +23,8 @@ public class Computer : MonoBehaviour
 
 	[SerializeField]
 	private CrashController CC;
+	[SerializeField]
+	private LinearProgressBarController pBar;
 
 	public int computerID;
 	public ComputerType computerType;
@@ -30,6 +32,7 @@ public class Computer : MonoBehaviour
 	public ComputerState _state;
 	[SerializeField]
 	private float _crashTimer;
+	private float _timerLength;
 	private RaptorAI currentRaptorUser;
 
 	private ComputerManager CM;
@@ -37,6 +40,10 @@ public class Computer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		if(pBar == null)
+			pBar = this.gameObject.GetComponentInChildren<LinearProgressBarController> ();
+
+
 		CC = GetComponent<CrashController> ();
 		CM = FindObjectOfType<ComputerManager> ();
 
@@ -91,6 +98,8 @@ public class Computer : MonoBehaviour
 		if (_state == ComputerState.WaitingToCrash) {
 			_state = ComputerState.RaptorCrashingComputer;
 			_crashTimer = CM.TimeToCrashWithRaptor;
+			_timerLength = _crashTimer;
+			pBar.gameObject.SetActive (true);
 			raptor._rState = RaptorAI.RaptorState.FiddlingWithTarget;
 			currentRaptorUser = raptor;
 		}
@@ -108,6 +117,8 @@ public class Computer : MonoBehaviour
 			_state = ComputerState.Crashed;
 
 			_crashTimer = CM.TimeFromCrashToExplode;
+			_timerLength = _crashTimer;
+			pBar.gameObject.SetActive (true);
 			// Release the raptor (if it hasn't already been released and there is one associated with this computer
 			if (currentRaptorUser != null) {
 				currentRaptorUser.FindNewTarget ();
@@ -128,6 +139,8 @@ public class Computer : MonoBehaviour
 			_state = ComputerState.Rebooting;
 			CC.CancelCrashEffects ();
 			_crashTimer =  rebootTime;
+			_timerLength = _crashTimer;
+			pBar.gameObject.SetActive (true);
 			SetComputerColour (Color.green);
 			FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.RebootingComputer;
 		}
@@ -137,6 +150,10 @@ public class Computer : MonoBehaviour
     void Update()
     {
 		_crashTimer -= Time.deltaTime;
+
+		if(pBar != null)
+			pBar.progress = ((_timerLength - _crashTimer) / _timerLength) * 100;
+
 		if (_crashTimer < 0) {
 			if (_state == ComputerState.WaitingToCrash) {
 				crashComputer ();
@@ -153,6 +170,8 @@ public class Computer : MonoBehaviour
 			} else if (_state == ComputerState.Rebooting) {
 				SetComputerColour (Color.white);
 				_state = ComputerState.WaitingToCrash;
+				pBar.progress = 0;
+				pBar.gameObject.SetActive (false);
 				_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
 				FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.Moving;
 			} else if (_state == ComputerState.Exploding) {
