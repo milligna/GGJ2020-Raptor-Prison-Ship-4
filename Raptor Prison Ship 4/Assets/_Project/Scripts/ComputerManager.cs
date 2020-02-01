@@ -8,6 +8,12 @@ public class ComputerManager : MonoBehaviour
 	[SerializeField]
 	private int WorkingComputers = 0;
 
+	public float MinDefaultComputerCrashTime = 10f;
+	public float MaxDefaultComputerCrashTime = 45f;
+	public float TimeToCrashWithRaptor = 5f;
+	public float TimeFromCrashToExplode = 30f;
+
+
     // Start is called before the first frame update
     void Start()
     {
