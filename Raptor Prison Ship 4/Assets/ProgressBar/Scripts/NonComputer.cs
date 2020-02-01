@@ -12,9 +12,10 @@ public class NonComputer : MonoBehaviour
 
 	private void OnTriggerStay (Collider other)
 	{
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Raptor")) {
-			other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
-
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Raptor")) {			
+			if (other.gameObject.GetComponent<RaptorAI> ().targettedLocation == this.gameObject) {
+				other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+			}
 		}
 	}
 

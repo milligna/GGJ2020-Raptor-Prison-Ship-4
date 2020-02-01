@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cac51bfa3dd441db4369cf5633941f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sparkEffect: {fileID: 0}
-  smokeEffect: {fileID: 0}
-  explosionEffect: {fileID: 0}
+  smokeEffect: {fileID: 5200691225451184709}
+  explosionEffectPrefab: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976,
+    type: 3}
 --- !u!1 &1823059963761382806
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +327,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc3b7ea9080f14da3babb93b2e2432b5, type: 3}
+--- !u!1 &5200691225451184709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8997389546239721030, guid: bc3b7ea9080f14da3babb93b2e2432b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3815031579498789891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5858259797818523851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331032524640025800, guid: bc3b7ea9080f14da3babb93b2e2432b5,

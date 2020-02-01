@@ -5,10 +5,19 @@ using UnityEngine.AI;
 
 public class RaptorAI : MonoBehaviour
 {
+	public enum RaptorState {
+		Imprisoned,
+		HeadingToTarget,
+		FiddlingWithTarget,
+		Content
+	}
+
+	private float _RaptorTimer;
+
+	public RaptorState _rState;
 
 	public Computer targettedComputer;
-	[SerializeField]
-	private GameObject targettedLocation;
+	public GameObject targettedLocation;
 	[SerializeField]
 	private NavMeshAgent raptorAgent;
 
@@ -21,9 +30,17 @@ public class RaptorAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		_rState = RaptorState.Imprisoned;
 		CM = FindObjectOfType<ComputerManager> ();
 		nonComputerLocations = FindObjectsOfType<NonComputer> ();
+		_RaptorTimer = 5.0f;
     }
+
+	public void ArrivedAtLocation ()
+	{
+		_rState = RaptorState.FiddlingWithTarget;
+	}
+
 
 
 	public void FindNewTarget ()
@@ -42,10 +59,23 @@ public class RaptorAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (targettedLocation == null) {
+		_RaptorTimer -= Time.deltaTime;
 
-			FindNewTarget ();
+		if (_RaptorTimer < 0 && _rState == RaptorState.Imprisoned) {
+			_rState = RaptorState.HeadingToTarget;
+		}
 
+		if(_rState == RaptorState.HeadingToTarget )
+		{
+			if (targettedLocation == null) {
+				FindNewTarget ();
+			} else {
+				if (targettedComputer != null) {
+					if (targettedComputer._state != Computer.ComputerState.WaitingToCrash) {
+						FindNewTarget ();
+					}
+				}
+			}
 		}
     }
 }

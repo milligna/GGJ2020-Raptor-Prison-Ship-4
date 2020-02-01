@@ -4,37 +4,39 @@ using UnityEngine;
 
 public class CrashController : MonoBehaviour
 {
-    public GameObject sparkEffect;
+   
     public GameObject smokeEffect;
-    public GameObject explosionEffect;
+    public GameObject explosionEffectPrefab;
+    
 
-    void SetCrashScreen()
+    public void SetCrashScreen()
     {
         // Set crash screen for the computer object
     }
 
-    void StartSmokingEffect()
+   public void StartSmokingEffect()
     {
-        // Activate the Smoke/spark object in the Prefab
-        sparkEffect.SetActive(true);
+        // Activate the Smoke object in the Prefab
+    
         smokeEffect.SetActive(true);
     }
 
-    void TriggerCountdownAudio()
+    public void TriggerCountdownAudio()
     {
         // Activate the Countdown Audio Noise in the Prefab
 
     }
 
-    void TriggerExplosionEffect()
+    public void TriggerExplosionEffect()
     {
         // instantiate Explosion audio and prefab, kill it and end the game
-
+        Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
     }
 
-    void CancelCrashEffects()
+   public void CancelCrashEffects()
     {
         // Deactivate all objects in the prefab
+        smokeEffect.SetActive(false);
     }
 }
 
