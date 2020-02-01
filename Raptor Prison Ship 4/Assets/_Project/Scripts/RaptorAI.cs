@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class RaptorAI : MonoBehaviour
 {
 
-	private Computer targettedComputer;
+	public Computer targettedComputer;
+	[SerializeField]
 	private GameObject targettedLocation;
 	[SerializeField]
 	private NavMeshAgent raptorAgent;
@@ -14,13 +15,14 @@ public class RaptorAI : MonoBehaviour
 	private ComputerManager CM;
 
 	[SerializeField]
-	private GameObject [] nonComputerLocations;
+	private NonComputer [] nonComputerLocations;
 
 
     // Start is called before the first frame update
     void Start()
     {
 		CM = FindObjectOfType<ComputerManager> ();
+		nonComputerLocations = FindObjectsOfType<NonComputer> ();
     }
 
 
@@ -29,7 +31,7 @@ public class RaptorAI : MonoBehaviour
 		targettedComputer = CM.GetRaptorTarget ();
 
 		if (targettedComputer == null) {
-			targettedLocation = nonComputerLocations [Random.Range (0, nonComputerLocations.Length)];
+			targettedLocation = nonComputerLocations [Random.Range (0, nonComputerLocations.Length)].gameObject;
 		} else {
 			targettedLocation = targettedComputer.gameObject;
 		}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ComputerManager : MonoBehaviour
 {
 	private Computer [] computers;
+	[SerializeField]
 	private int WorkingComputers = 0;
 
     // Start is called before the first frame update

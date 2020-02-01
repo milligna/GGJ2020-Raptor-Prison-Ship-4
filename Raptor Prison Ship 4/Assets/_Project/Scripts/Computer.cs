@@ -46,19 +46,33 @@ public class Computer : MonoBehaviour
 				rebootComputer ();
 			}
 		} else if(other.gameObject.layer == LayerMask.NameToLayer("Raptor")) {
-			crashComputer ();
-			other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
-
+			if (_state == ComputerState.WaitingToCrash) {
+				crashComputer ();
+				other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+			}
 		}
 	}
 
+	private void OnTriggerStay (Collider other)
+	{
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Raptor")) {
+			if (other.gameObject.GetComponent<RaptorAI> ().targettedComputer == this) {
+				crashComputer ();
+				other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+			}
+		}
+	}
 
 	private void crashComputer ()
 	{
-		SetComputerColour (Color.magenta);
-		_crashTimer = Random.Range (10f, 20f);
-		// Release the raptor (if it hasn't already been released and there is one associated with this computer
-		CM.ComputerCrashed ();
+		// Only allow waiting to crash computers to crash
+		if (_state == ComputerState.WaitingToCrash) {
+			SetComputerColour (Color.magenta);
+			_state = ComputerState.Crashed;
+			_crashTimer = Random.Range (10f, 20f);
+			// Release the raptor (if it hasn't already been released and there is one associated with this computer
+			CM.ComputerCrashed ();
+		}
 	}
 
 	private void SetComputerColour (Color colour)
@@ -84,7 +98,6 @@ public class Computer : MonoBehaviour
 
 		if (_crashTimer < 0) {
 			if (_state == ComputerState.WaitingToCrash) {
-				_state = ComputerState.Crashed;
 				crashComputer ();
 			} else if (_state == ComputerState.Crashed) {
 				_state = ComputerState.Exploding;
