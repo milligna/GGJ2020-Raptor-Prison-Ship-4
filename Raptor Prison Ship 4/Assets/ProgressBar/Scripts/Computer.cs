@@ -126,6 +126,7 @@ public class Computer : MonoBehaviour
 	{
 		if (_state == ComputerState.Crashed || _state == ComputerState.RaptorCrashingComputer) {
 			_state = ComputerState.Rebooting;
+			CC.CancelCrashEffects ();
 			_crashTimer =  rebootTime;
 			SetComputerColour (Color.green);
 			FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.RebootingComputer;
@@ -141,6 +142,7 @@ public class Computer : MonoBehaviour
 				crashComputer ();
 			} else if (_state == ComputerState.Crashed) {
 				_state = ComputerState.Exploding;
+				CC.TriggerExplosionEffect ();
 				SetComputerColour (Color.black);
 				_crashTimer = CM.TimeToEndGame;
 				// TODO
