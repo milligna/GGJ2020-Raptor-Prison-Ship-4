@@ -85,8 +85,13 @@ public class PlayerControl : MonoBehaviour
 		// Using the stick
 		if (result == 0)
 			_pState = playerState.Moving;
-		else if (result == 1)	// Training the raptor properly
+		else if (result == 1)   // Training the raptor properly
 			_pState = playerState.TrainingRaptor;
+		else if (result == -1)  // Not sure how we got here, but we did, so run away
+		{
+			_pState = playerState.Moving;
+			currentRaptor = null;
+		}
 		
 		HideRaptorTools ();
 	}
@@ -96,6 +101,14 @@ public class PlayerControl : MonoBehaviour
 		_pState = playerState.Moving;
 		currentRaptor = null;
 
+	}
+
+	public void TooSlowRaptorMovedOn ()
+	{
+		if (_pState == playerState.SelectRaptorTool) {
+			HideRaptorTools ();
+			_pState = playerState.Moving;
+		}
 	}
 
 	// Update is called once per frame
@@ -126,7 +139,8 @@ public class PlayerControl : MonoBehaviour
 
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
 							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
-								ShowRaptorTools ();
+								ShowRaptorTools ( );
+								currentRaptor.playerInteracting = this;
 							}
 						}
 

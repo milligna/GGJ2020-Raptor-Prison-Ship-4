@@ -26,6 +26,18 @@ public class ComputerManager : MonoBehaviour
 
 		rebuildComputerList ();
 
+		List<Computer> tmpList = new List<Computer> ();
+
+		for (int i = 0; i < computers.Length; i++) {
+			if (computers [i].linkedDoor != null) {
+				tmpList.Add (computers [i]);
+			}
+		}
+
+		if (tmpList.Count > 0) {
+			tmpList [Random.Range (0, tmpList.Count)].SetTimer (3.0f);
+		}
+
     }
 
 	public void rebuildComputerList ()

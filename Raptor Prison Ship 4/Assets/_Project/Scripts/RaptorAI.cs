@@ -22,6 +22,8 @@ public class RaptorAI : MonoBehaviour
 
 	public RaptorState _rState;
 
+	public PlayerControl playerInteracting;
+
 	[SerializeField]
 	private LinearProgressBarController pBar;
 
@@ -91,6 +93,12 @@ public class RaptorAI : MonoBehaviour
 		}
 
 		raptorAgent.SetDestination (targettedLocation.transform.position);
+
+		if (playerInteracting != null) {
+			playerInteracting.TooSlowRaptorMovedOn ();
+			playerInteracting = null;
+		}
+
 	}
 
     // Update is called once per frame
@@ -98,7 +106,7 @@ public class RaptorAI : MonoBehaviour
     {
 		_RaptorTimer -= Time.deltaTime;
 
-		if (_RaptorTimer < 0 && (_rState == RaptorState.Imprisoned || _rState == RaptorState.WastingTime)) {
+		if (_RaptorTimer < 0 &&  _rState == RaptorState.WastingTime) {
 			_rState = RaptorState.HeadingToTarget;
 		}
 

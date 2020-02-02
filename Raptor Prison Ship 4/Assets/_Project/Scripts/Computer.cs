@@ -26,8 +26,7 @@ public class Computer : MonoBehaviour
 	[SerializeField]
 	private LinearProgressBarController pBar;
 
-	[SerializeField]
-	private GameObject linkedDoor;
+	public DoorControl linkedDoor;
 
 	public int computerID;
 	public ComputerType computerType;
@@ -59,6 +58,11 @@ public class Computer : MonoBehaviour
 		_state = ComputerState.WaitingToCrash;
 		_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
     }
+
+	public void SetTimer (float thisTime)
+	{
+		_crashTimer = thisTime;
+	}
 
 	private void OnTriggerEnter (Collider other)
 	{
@@ -143,6 +147,10 @@ public class Computer : MonoBehaviour
 
 			SetComputerColour ( _state == ComputerState.WaitingToCrash ? Color.magenta : Color.yellow  );
 			_state = ComputerState.Crashed;
+
+			if (linkedDoor != null) {
+				linkedDoor.ReleaseTheRaptor ();
+			}
 
 			_crashTimer = CM.TimeFromCrashToExplode;
 			_timerLength = _crashTimer;
