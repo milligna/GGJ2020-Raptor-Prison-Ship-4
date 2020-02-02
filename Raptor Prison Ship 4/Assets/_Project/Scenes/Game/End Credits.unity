@@ -5001,16 +5001,29 @@ MonoBehaviour:
   ScrollStartY: -350
   ScrollEndY: 1000
   PlayOnStart: 1
-  Text: "RAPTOR PRISON SHIP\n\nEPISODE IV\n\n The Rebootening\n\nIt is a period of
-    civil war.  In the deepest reaches of space, a cohort of hardened interstellar
-    RAPTOR CONVICTS find themselves adrift on a gritty high-security Prison Transport.
-    \n\n You are a sole IT TECHNICIAN who must race against time to save the ship's
-    mish-mash of computers from the technical ineptitude of the JURASSIC JAILBIRDS,
-    and perhaps along the way, you can help rehabilitate them by teaching bankable
-    life skills to your new companions, as they recover from a lifetime of WHITE COLLAR
-    CRIME.\n\nAs the Raptors are released, they will accidentally break the ship\u2019s
-    computers.\n\nYou must REBOOT any broken computers before the ship explodes, and
-    give the raptors the help they need to become productive members of the community..."
+  Text: 'THE END
+
+
+    The Raptors will be back in RAPTOR PRISON SHIP V: COMMUNITY SERVICE
+
+
+    CREDITS:
+
+    Adam "Elroy" Mazzitelli - Artist
+
+    Patrick Giang - Artist
+
+    Bryn DC - Artist
+
+    Joel Rattur - Programmer
+
+    Peter Armstrong - Programmer
+
+    Kevin Clark - Programmer/Audio Design
+
+    Phil Tippett - Dinosaur Wrangler
+
+'
   FontSize: 24
   SecondsToStart: 60
 --- !u!4 &1429732754

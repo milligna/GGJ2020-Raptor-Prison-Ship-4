@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5077309076071888481}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3369316746193770658, guid: d3fb80f2c9e02494cb9329b8dcceb9bb, type: 3}
 --- !u!23 &8374025556201560913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +151,8 @@ MonoBehaviour:
   RaptorHappyPlace: {fileID: 0}
   _rState: 0
   playerInteracting: {fileID: 0}
-  pBar: {fileID: 0}
+  pBar: {fileID: 6623773273429453709}
+  RaptorSounds: []
   laziness: 7.5
   targettedComputer: {fileID: 0}
   targettedLocation: {fileID: 0}
@@ -237,3 +238,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7511318835525296575}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6623773273429453709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3733992192185895474, guid: cce637e57a66500439936fe2a5e4d330,
+    type: 3}
+  m_PrefabInstance: {fileID: 7511318835525296575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d87ab15e85dd4b9d7f42e13649df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
