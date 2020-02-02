@@ -29,6 +29,9 @@ public class PlayerControl : MonoBehaviour
 	[SerializeField]
 	private RectTransform RaptorToolsPanel;
 
+	public Sprite [] ComputerInterfaces;
+	public Image ComputerToolHint;
+
 	private int ClickLayerMask;
 
     // Start is called before the first frame update
@@ -41,6 +44,7 @@ public class PlayerControl : MonoBehaviour
 
 	public void ShowComputerTools ()
 	{
+		ComputerToolHint.sprite = ComputerInterfaces [(int)currentComputer.computerType];
 		_pState = playerState.SelectComputerTool;
 		ComputerToolsPanel.gameObject.SetActive (true);
 	}

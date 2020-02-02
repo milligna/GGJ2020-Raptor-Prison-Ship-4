@@ -37,6 +37,8 @@ public class Computer : MonoBehaviour
 	private float _timerLength;
 	private RaptorAI currentRaptorUser;
 
+	private AudioSource computerSpeaker;
+
 	private ComputerManager CM;
 
     // Start is called before the first frame update
@@ -44,6 +46,8 @@ public class Computer : MonoBehaviour
     {
 		if(pBar == null)
 			pBar = this.gameObject.GetComponentInChildren<LinearProgressBarController> ();
+
+		computerSpeaker = GetComponent<AudioSource> ();
 
 
 		CC = GetComponent<CrashController> ();
@@ -193,6 +197,11 @@ public class Computer : MonoBehaviour
 		this.gameObject.layer = LayerMask.NameToLayer ("NonComputer");
 	}
 
+	private void PlayRebootSound ()
+	{
+		computerSpeaker.PlayOneShot (CM.rebootSound [Random.Range (0 CM.rebootSound.length)]);
+	}
+
 	public void RaptorInterferenceInterferedWith ()
 	{
 		_state = ComputerState.WaitingToCrash;
@@ -231,6 +240,7 @@ public class Computer : MonoBehaviour
 			} else if (_state == ComputerState.Rebooting) {
 				SetComputerColour (Color.white);
 				CC.CancelCrashEffects ();
+				PlayRebootSound ();
 				_state = ComputerState.WaitingToCrash;
 				pBar.progress = 0;
 				pBar.gameObject.SetActive (false);
