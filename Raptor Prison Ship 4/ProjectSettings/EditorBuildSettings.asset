@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Game/Crawl.unity
     guid: 8c184c3ce90dcd64ab7b57d461379b11
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/End Credits.unity
+    guid: 2ac660da01b934cafbd79f26f20e5cd6
   m_configObjects: {}
