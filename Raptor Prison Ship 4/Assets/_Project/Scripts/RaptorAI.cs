@@ -15,6 +15,7 @@ public class RaptorAI : MonoBehaviour
 	}
 
 	public float _RaptorTimer;
+	private AudioSource AS;
 
 	public float timeToEducate = 5f;
 
@@ -26,6 +27,9 @@ public class RaptorAI : MonoBehaviour
 
 	[SerializeField]
 	private LinearProgressBarController pBar;
+
+	[SerializeField]
+	private AudioClip [] RaptorSounds;
 
 	public float laziness = 7.5f;
 
@@ -45,8 +49,9 @@ public class RaptorAI : MonoBehaviour
     {
 		_rState = RaptorState.Imprisoned;
 		CM = FindObjectOfType<ComputerManager> ();
+		AS = GetComponent<AudioSource> ();
 		nonComputerLocations = FindObjectsOfType<NonComputer> ();
-		_RaptorTimer = 5.0f;
+		_RaptorTimer = 0f;
     }
 
 	public void ArrivedAtLocation ()
@@ -63,7 +68,7 @@ public class RaptorAI : MonoBehaviour
 			if (toolID == 0) {
 				_rState = RaptorState.HeadingToTarget;
 				targettedComputer.RaptorInterferenceInterferedWith ();
-
+				playRaptorSound ();
 				targettedComputer = null;
 				targettedLocation = null;
 				return 0;
@@ -101,12 +106,20 @@ public class RaptorAI : MonoBehaviour
 
 	}
 
+	public void playRaptorSound ()
+	{
+		if (AS != null && RaptorSounds.Length > 0) {
+			AS.PlayOneShot (RaptorSounds [Random.Range (0, RaptorSounds.Length)]);
+		}
+	}
+
     // Update is called once per frame
     void Update()
     {
 		_RaptorTimer -= Time.deltaTime;
 
 		if (_RaptorTimer < 0 &&  _rState == RaptorState.WastingTime) {
+			playRaptorSound ();
 			_rState = RaptorState.HeadingToTarget;
 		}
 
@@ -123,6 +136,7 @@ public class RaptorAI : MonoBehaviour
 		} else if (_rState == RaptorState.Learning) {
 			pBar.progress = ((timeToEducate - _RaptorTimer) / timeToEducate) * 100;
 			if (_RaptorTimer < 0) {
+				playRaptorSound ();
 				_rState = RaptorState.Content;
 				pBar.gameObject.SetActive (false);
 				raptorAgent.SetDestination (RaptorHappyPlace.gameObject.transform.position);

@@ -5001,16 +5001,16 @@ MonoBehaviour:
   ScrollStartY: -350
   ScrollEndY: 1000
   PlayOnStart: 1
-  Text: "Raptor Prison Ship \n\nEpisode IV\n\n The Rebootening\n\nIt is a period of
+  Text: "RAPTOR PRISON SHIP\n\nEPISODE IV\n\n The Rebootening\n\nIt is a period of
     civil war.  In the deepest reaches of space, a cohort of hardened interstellar
-    Raptor convicts find themselves adrift on a gritty high-security Prison Transport.
-    \n\n You are a sole IT Technician who must race against time to save the ship's
-    mish-mash of computers from the technical ineptitude of the jurassic jailbirds,
+    RAPTOR CONVICTS find themselves adrift on a gritty high-security Prison Transport.
+    \n\n You are a sole IT TECHNICIAN who must race against time to save the ship's
+    mish-mash of computers from the technical ineptitude of the JURASSIC JAILBIRDS,
     and perhaps along the way, you can help rehabilitate them by teaching bankable
-    life skills to your new companions, as they recover from a lifetime of crime.\n\nAs
-    the Raptors are released, they will accidentally break the ship\u2019s computers.\n\nYou
-    must reboot any broken computers before the ship explodes, and give the raptors
-    the help they need to become productive members of the community..."
+    life skills to your new companions, as they recover from a lifetime of WHITE COLLAR
+    CRIME.\n\nAs the Raptors are released, they will accidentally break the ship\u2019s
+    computers.\n\nYou must REBOOT any broken computers before the ship explodes, and
+    give the raptors the help they need to become productive members of the community..."
   FontSize: 24
 --- !u!4 &1429732754
 Transform:
