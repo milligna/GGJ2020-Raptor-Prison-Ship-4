@@ -89,6 +89,7 @@ public class RaptorAI : MonoBehaviour
 
 	public void FindNewTarget ()
 	{
+		playRaptorSound ();
 		targettedComputer = CM.GetRaptorTarget ();
 
 		if (targettedComputer == null) {
@@ -110,6 +111,8 @@ public class RaptorAI : MonoBehaviour
 	{
 		if (AS != null && RaptorSounds.Length > 0) {
 			AS.PlayOneShot (RaptorSounds [Random.Range (0, RaptorSounds.Length)]);
+		} else {
+			Debug.Log ("Somethings not set up right with the raptor sounds");
 		}
 	}
 

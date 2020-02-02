@@ -33,7 +33,7 @@ public class Computer : MonoBehaviour
 	public float rebootTime = 5f;
 	public ComputerState _state;
 	[SerializeField]
-	private float _crashTimer;
+	private float _crashTimer = 0;
 	private float _timerLength;
 	private RaptorAI currentRaptorUser;
 
@@ -60,7 +60,10 @@ public class Computer : MonoBehaviour
 		// Pick a random computer type 
 		computerType =  (ComputerType)Random.Range (0, System.Enum.GetValues(typeof(ComputerType)).Length);
 		_state = ComputerState.WaitingToCrash;
-		_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
+
+		// if the timer is greater than 0, we must have set it in the ComputerManager->start, so don't over write it
+		if(_crashTimer <= 0)
+			_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
     }
 
 	public void SetTimer (float thisTime)
@@ -93,7 +96,8 @@ public class Computer : MonoBehaviour
 				} else {
 					if (_state == ComputerState.WaitingToCrash) {
 						RaptorVisitsComputer (tmpRaptor);
-					} else {
+					} else
+					{
 						// Computer crashed before the raptor could crash it, but after it targetted it
 						tmpRaptor.FindNewTarget ();
 					}
@@ -137,6 +141,7 @@ public class Computer : MonoBehaviour
 			_timerLength = _crashTimer;
 			pBar.gameObject.SetActive (true);
 			raptor._rState = RaptorAI.RaptorState.FiddlingWithComputer;
+			raptor.targettedComputer = null;	// Don't target the computer we're already at.  This is so in TriggerStay it doesn't think we need to head to a different computer
 			currentRaptorUser = raptor;
 		}
 	}

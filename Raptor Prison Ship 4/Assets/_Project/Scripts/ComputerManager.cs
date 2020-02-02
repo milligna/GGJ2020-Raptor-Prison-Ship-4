@@ -29,7 +29,7 @@ public class ComputerManager : MonoBehaviour
 			return _ContentRaptors;
 		}
 		set {
-			ContentRaptors++;
+			ContentRaptors = value;
 			if (_ContentRaptors == numberOfRaptors) {
 				EndGameWin ();
 			}
@@ -58,8 +58,9 @@ public class ComputerManager : MonoBehaviour
 
 		if (tmpList.Count > 0) {
 			tmpList [Random.Range (0, tmpList.Count)].SetTimer (3.0f);
+		} else {
+			Debug.Log ("No doors links to any computer.  This is going to be a slow game");
 		}
-
     }
 
 	public void rebuildComputerList ()
