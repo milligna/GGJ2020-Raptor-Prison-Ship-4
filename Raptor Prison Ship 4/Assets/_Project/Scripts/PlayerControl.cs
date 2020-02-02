@@ -44,7 +44,9 @@ public class PlayerControl : MonoBehaviour
 
 	public void ShowComputerTools ()
 	{
-		ComputerToolHint.sprite = ComputerInterfaces [(int)currentComputer.computerType];
+		if (ComputerInterfaces.Length > 0) {
+			ComputerToolHint.sprite = ComputerInterfaces [(int)currentComputer.computerType];
+		}
 		_pState = playerState.SelectComputerTool;
 		ComputerToolsPanel.gameObject.SetActive (true);
 	}
