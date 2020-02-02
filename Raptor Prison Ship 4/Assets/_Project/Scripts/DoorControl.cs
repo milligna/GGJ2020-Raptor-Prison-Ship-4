@@ -44,9 +44,7 @@ public class DoorControl : MonoBehaviour
 		if (DoorPosition == DoorState.open) {
 			timer += Time.deltaTime;
 
-			//this.gameObject.transform.position = Vector3.Slerp (ClosedPosition, ClosedPosition - Vector3.up * 4, (timer / 3.0f));
-
-			if (timer > 3.0f) {
+			if (timer > 3.0f && linkedRaptor._rState == RaptorAI.RaptorState.Imprisoned) {
 				linkedRaptor._rState = RaptorAI.RaptorState.HeadingToTarget;
 			}
 		}

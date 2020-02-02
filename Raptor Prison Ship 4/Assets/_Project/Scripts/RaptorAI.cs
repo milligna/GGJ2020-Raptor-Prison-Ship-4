@@ -64,7 +64,7 @@ public class RaptorAI : MonoBehaviour
 
 	public int Tooled (int toolID)
 	{
-		if (targettedComputer != null) {
+		if (_rState == RaptorState.FiddlingWithComputer) {
 			if (toolID == 0) {
 				_rState = RaptorState.HeadingToTarget;
 				targettedComputer.RaptorInterferenceInterferedWith ();
@@ -86,6 +86,7 @@ public class RaptorAI : MonoBehaviour
 		} else
 			return -1;
 	}
+
 
 	public void FindNewTarget ()
 	{

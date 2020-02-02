@@ -224,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (6)
+      value: Computer Cell4
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -264,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -708,6 +708,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be14eea3f13c524297b4432c6a3e758, type: 3}
+--- !u!1 &191617865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831253673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &191617872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191617865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!4 &204499979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 48dbf81e1cb070c4499cbaeb7c6b7c33,
@@ -902,7 +924,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (4)
+      value: Computer Cell2
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -942,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -1194,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Name
-      value: SM_Door (1)
+      value: SM_Door Cell2
       objectReference: {fileID: 0}
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
@@ -1450,14 +1472,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1806055085}
+  - {fileID: 142123539}
+  - {fileID: 987158698}
   - {fileID: 1674673448}
   - {fileID: 1177571681}
   - {fileID: 947333190}
   - {fileID: 944300048}
   - {fileID: 1954786725}
-  - {fileID: 142123539}
-  - {fileID: 987158698}
-  - {fileID: 1806055085}
   - {fileID: 1887836660}
   m_Father: {fileID: 276413245}
   m_RootOrder: 3
@@ -1642,7 +1664,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (2)
+      value: ComputerDesk3
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -1682,7 +1704,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -1967,6 +1989,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845231342}
     m_Modifications:
+    - target: {fileID: 652386734296103611, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: RaptorHappyPlace
+      value: 
+      objectReference: {fileID: 784067906}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2030,7 +2062,7 @@ PrefabInstance:
     - target: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_Name
-      value: Raptor (2)
+      value: Raptor Cell3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360, type: 3}
@@ -2747,7 +2779,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1831253673}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 191617865}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45c57907d3afa4d1c9cbbe376d349586, type: 3}
@@ -3037,6 +3069,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845231342}
     m_Modifications:
+    - target: {fileID: 652386734296103611, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: RaptorHappyPlace
+      value: 
+      objectReference: {fileID: 1482870347}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3100,7 +3142,7 @@ PrefabInstance:
     - target: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_Name
-      value: Raptor (3)
+      value: Raptor Cell4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360, type: 3}
@@ -3421,7 +3463,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (5)
+      value: Computer Cell3
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -3461,7 +3503,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -3735,6 +3777,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1736910427}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &714095325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837681287637661748, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 240134020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &715072666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5be14eea3f13c524297b4432c6a3e758,
@@ -3906,6 +3960,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 162955730}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &784067906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837681287637661748, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 672402960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &810631166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 48dbf81e1cb070c4499cbaeb7c6b7c33,
@@ -4207,6 +4273,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1613889751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &905054929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837681287637661748, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1851007709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &928525442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 03743878060da024298e8b84a037445b,
@@ -4491,7 +4569,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (7)
+      value: Computer Cell5
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -4531,7 +4609,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -4872,7 +4950,7 @@ PrefabInstance:
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Name
-      value: SM_Door (3)
+      value: SM_Door Cell4
       objectReference: {fileID: 0}
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
@@ -5244,7 +5322,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (1)
+      value: ComputerDesk2
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -5284,7 +5362,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -6378,6 +6456,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845231342}
     m_Modifications:
+    - target: {fileID: 652386734296103611, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: RaptorHappyPlace
+      value: 
+      objectReference: {fileID: 714095325}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6441,7 +6529,7 @@ PrefabInstance:
     - target: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_Name
-      value: Raptor (1)
+      value: Raptor Cell2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360, type: 3}
@@ -6758,6 +6846,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2098237056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351473020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837681287637661748, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 992659650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1358884160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6912,7 +7012,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer
+      value: ComputerDesk1
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -6952,7 +7052,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -7417,6 +7517,18 @@ MonoBehaviour:
   m_VoxelSize: 0.096666664
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 8f6caa48f8aaf94409ff0a03c6f8495b, type: 2}
+--- !u!114 &1482870347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837681287637661748, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 68541268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1492346882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 48dbf81e1cb070c4499cbaeb7c6b7c33,
@@ -7793,7 +7905,7 @@ PrefabInstance:
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Name
-      value: SM_Door (4)
+      value: SM_Door Cell5
       objectReference: {fileID: 0}
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
@@ -9077,6 +9189,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845231342}
     m_Modifications:
+    - target: {fileID: 652386734296103611, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: RaptorHappyPlace
+      value: 
+      objectReference: {fileID: 1351473020}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9140,7 +9262,7 @@ PrefabInstance:
     - target: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_Name
-      value: Raptor (4)
+      value: Raptor Cell5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360, type: 3}
@@ -9225,7 +9347,7 @@ PrefabInstance:
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Name
-      value: SM_Door (2)
+      value: SM_Door Cell3
       objectReference: {fileID: 0}
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
@@ -9696,25 +9818,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1845231342}
     m_Modifications:
+    - target: {fileID: 652386734296103611, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: playerInteracting
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+        type: 3}
+      propertyPath: RaptorHappyPlace
+      value: 
+      objectReference: {fileID: 905054929}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.483843
+      value: -8.87
       objectReference: {fileID: 0}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62346125
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.619417
+      value: 13.49
       objectReference: {fileID: 0}
     - target: {fileID: 2707826843642110550, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
@@ -9769,7 +9901,7 @@ PrefabInstance:
     - target: {fileID: 5077309076071888481, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
         type: 3}
       propertyPath: m_Name
-      value: Raptor
+      value: Raptor Cell1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360, type: 3}
@@ -9824,7 +9956,7 @@ PrefabInstance:
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
-      value: Computer (3)
+      value: Computer Cell1
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -9864,7 +9996,7 @@ PrefabInstance:
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4645708677531272758, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
@@ -10793,7 +10925,7 @@ PrefabInstance:
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Name
-      value: SM_Door
+      value: SM_Door Cell1
       objectReference: {fileID: 0}
     - target: {fileID: 2973174688450405402, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
@@ -11576,7 +11708,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

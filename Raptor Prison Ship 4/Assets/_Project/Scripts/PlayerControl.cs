@@ -142,7 +142,7 @@ public class PlayerControl : MonoBehaviour {
 						currentRaptor = rayResult.collider.gameObject.GetComponent<RaptorAI> ();
 
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
-							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
+							if (currentRaptor._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
 								ShowRaptorTools ();
 								currentRaptor.playerInteracting = this;
 							}
