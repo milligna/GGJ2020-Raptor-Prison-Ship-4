@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ComputerManager : MonoBehaviour
 {
@@ -16,6 +17,26 @@ public class ComputerManager : MonoBehaviour
 	private List<Computer> NonCrashedComputers;
 	private List<Computer> CrashedComputers;
 
+	public string WinSceneName;
+	public string LoseSceneName;
+
+	private int numberOfRaptors = -1;
+
+	public int _ContentRaptors = 0;
+
+	int ContentRaptors {
+		get {
+			return _ContentRaptors;
+		}
+		set {
+			ContentRaptors++;
+			if (_ContentRaptors == numberOfRaptors) {
+				EndGameWin ();
+			}
+		}
+	}
+
+
 	public AudioClip [] rebootSound;
 
     // Start is called before the first frame update
@@ -24,7 +45,7 @@ public class ComputerManager : MonoBehaviour
 		computers = FindObjectsOfType<Computer> ();
 		NonCrashedComputers = new List<Computer> ();
 		CrashedComputers = new List<Computer> ();
-
+		numberOfRaptors = FindObjectsOfType<RaptorAI> ().Length;
 		rebuildComputerList ();
 
 		List<Computer> tmpList = new List<Computer> ();
@@ -72,6 +93,16 @@ public class ComputerManager : MonoBehaviour
 
 	}
 
+	public void EndGameLose ()
+	{
+		SceneManager.LoadScene (LoseSceneName);
+
+	}
+
+	public void EndGameWin ()
+	{
+		SceneManager.LoadScene (WinSceneName);
+	}
     // Update is called once per frame
     void Update()
     {

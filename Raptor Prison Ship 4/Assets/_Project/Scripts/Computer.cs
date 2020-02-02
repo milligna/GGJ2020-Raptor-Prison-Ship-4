@@ -227,6 +227,7 @@ public class Computer : MonoBehaviour
 				_state = ComputerState.Exploding;
 				CC.TriggerExplosionEffect ();
 				SetComputerColour (Color.black);
+
 				// If user was in the process of selecting a tool to use on the computer, need to reset the player
 				PlayerControl PC = FindObjectOfType<PlayerControl> ();
 				if (PC._pState == PlayerControl.playerState.SelectComputerTool && PC.targettedComputer == computerID ) {
@@ -248,7 +249,7 @@ public class Computer : MonoBehaviour
 				_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
 				FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.Moving;
 			} else if (_state == ComputerState.Exploding) {
-				Application.Quit ();
+				CM.EndGameLose ();
 			}
 		} else if (_state == ComputerState.Crashed && _crashTimer < CC.audioData.clip.length && !CC.audioData.isPlaying) {
 			CC.TriggerCountdownAudio ();
