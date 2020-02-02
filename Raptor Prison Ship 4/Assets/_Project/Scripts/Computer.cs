@@ -45,7 +45,7 @@ public class Computer : MonoBehaviour
     void Start()
     {
 		if(pBar == null)
-			pBar = this.gameObject.GetComponentInChildren<LinearProgressBarController> ();
+			pBar = this.gameObject.GetComponentInChildren<LinearProgressBarController> (true);
 
 		computerSpeaker = GetComponent<AudioSource> ();
 
