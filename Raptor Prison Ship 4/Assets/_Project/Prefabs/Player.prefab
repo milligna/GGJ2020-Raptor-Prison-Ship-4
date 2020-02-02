@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pState: 0
-  player: {fileID: 0}
+  player: {fileID: 6067107797383301013}
   PlayerComputerInteraction: 2
   targettedComputer: 0
   ComputerToolsPanel: {fileID: 0}
