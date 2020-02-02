@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class PlayerControl : MonoBehaviour
-{
+public class PlayerControl : MonoBehaviour {
 	public enum playerState {
 		Moving,
 		TrainingRaptor,
@@ -18,7 +17,7 @@ public class PlayerControl : MonoBehaviour
 
 	public NavMeshAgent player;
 
-	public float PlayerComputerInteraction = 2.0f;	// Should be about the same as the computer's trigger colliders diameter/radius??
+	public float PlayerComputerInteraction = 2.0f;  // Should be about the same as the computer's trigger colliders diameter/radius??
 
 	public int targettedComputer = 0;
 	private Computer currentComputer;
@@ -34,13 +33,13 @@ public class PlayerControl : MonoBehaviour
 
 	private int ClickLayerMask;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start ()
+	{
 		_pState = playerState.Moving;
 		targettedComputer = 0;  // Not aiming at a computer
 		ClickLayerMask = LayerMask.GetMask ("Floor", "Computer", "Raptor");
-    }
+	}
 
 	public void ShowComputerTools ()
 	{
@@ -73,8 +72,7 @@ public class PlayerControl : MonoBehaviour
 		// Just incase the computer blew up before a tool was selected
 		if (currentComputer._state == Computer.ComputerState.Exploding) {
 			_pState = playerState.Moving;
-		}
-		else if (toolID == (int)currentComputer.computerType) {
+		} else if (toolID == (int)currentComputer.computerType) {
 			currentComputer.rebootComputer ();
 		} else {
 			_pState = playerState.Moving;
@@ -98,7 +96,7 @@ public class PlayerControl : MonoBehaviour
 			_pState = playerState.Moving;
 			currentRaptor = null;
 		}
-		
+
 		HideRaptorTools ();
 	}
 
@@ -118,8 +116,8 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
-    {
+	void Update ()
+	{
 		if (Input.GetMouseButtonDown (0)) {
 			Ray raything = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit rayResult;
@@ -145,7 +143,7 @@ public class PlayerControl : MonoBehaviour
 
 						if ((player.destination - player.gameObject.transform.position).magnitude < PlayerComputerInteraction) {
 							if (rayResult.collider.gameObject.GetComponent<RaptorAI> ()._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
-								ShowRaptorTools ( );
+								ShowRaptorTools ();
 								currentRaptor.playerInteracting = this;
 							}
 						}
@@ -157,5 +155,5 @@ public class PlayerControl : MonoBehaviour
 				}
 			}
 		}
-    }
+	}
 }

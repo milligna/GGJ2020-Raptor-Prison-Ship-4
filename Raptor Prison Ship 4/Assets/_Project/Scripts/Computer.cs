@@ -193,6 +193,7 @@ public class Computer : MonoBehaviour
 		_state = ComputerState.RaptorSafelyUsingComputer;
 		pBar.gameObject.SetActive (false);  // Ensure the progress bar gets hidden
 		CC.CancelCrashEffects ();
+		CM._ContentRaptors++;
 		// So player can't click on computer anymore
 		this.gameObject.layer = LayerMask.NameToLayer ("NonComputer");
 	}
