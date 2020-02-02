@@ -5012,7 +5012,7 @@ MonoBehaviour:
     computers.\n\nYou must REBOOT any broken computers before the ship explodes, and
     give the raptors the help they need to become productive members of the community..."
   FontSize: 24
-  SecondsToStart: 60
+  SecondsToStart: 50
 --- !u!4 &1429732754
 Transform:
   m_ObjectHideFlags: 0
