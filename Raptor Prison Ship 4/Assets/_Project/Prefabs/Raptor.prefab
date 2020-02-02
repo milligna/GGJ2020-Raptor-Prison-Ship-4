@@ -153,7 +153,19 @@ MonoBehaviour:
   _rState: 0
   playerInteracting: {fileID: 0}
   pBar: {fileID: 6623773273429453709}
-  RaptorSounds: []
+  RaptorSounds:
+  - {fileID: 8300000, guid: 1cffb9902c83a454e8d107258b1abc0b, type: 3}
+  - {fileID: 8300000, guid: cf93b692e6bc04f3481e8d6ed7b454b2, type: 3}
+  - {fileID: 8300000, guid: 42b75be33c19b4b7f8c1e8fb68fccc42, type: 3}
+  - {fileID: 8300000, guid: fa29e6aad94564dd498f6c3d5189a761, type: 3}
+  - {fileID: 8300000, guid: c2c18cf34119a4341bf7ee7a2515b8f7, type: 3}
+  - {fileID: 8300000, guid: 5ff675c7f2f254ced8d169443bc905e9, type: 3}
+  - {fileID: 8300000, guid: 747e0f4b831f84058a398fc234f91503, type: 3}
+  - {fileID: 8300000, guid: f4b767d96715a4ca9a9b14a253361f6a, type: 3}
+  - {fileID: 8300000, guid: 4e0640565c8c34313bb09b803a9ed483, type: 3}
+  - {fileID: 8300000, guid: 7788400741b644df290ec88da9189655, type: 3}
+  - {fileID: 8300000, guid: ed0c26ee196244125bbff397a06f5481, type: 3}
+  - {fileID: 8300000, guid: 7ba7a8baec56b442ebafd3a093f7ce95, type: 3}
   laziness: 7.5
   targettedComputer: {fileID: 0}
   targettedLocation: {fileID: 0}
