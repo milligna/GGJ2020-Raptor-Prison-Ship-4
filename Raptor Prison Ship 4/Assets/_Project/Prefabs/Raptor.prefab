@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5077309076071888481}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3369316746193770658, guid: d3fb80f2c9e02494cb9329b8dcceb9bb, type: 3}
 --- !u!23 &8374025556201560913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   _rState: 0
   playerInteracting: {fileID: 0}
   pBar: {fileID: 6623773273429453709}
+  RaptorSounds: []
   laziness: 7.5
   targettedComputer: {fileID: 0}
   targettedLocation: {fileID: 0}
