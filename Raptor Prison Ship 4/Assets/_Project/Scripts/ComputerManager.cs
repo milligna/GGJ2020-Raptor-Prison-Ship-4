@@ -16,7 +16,7 @@ public class ComputerManager : MonoBehaviour
 	private List<Computer> NonCrashedComputers;
 	private List<Computer> CrashedComputers;
 
-	private AudioClip [] rebootSound;
+	public AudioClip [] rebootSound;
 
     // Start is called before the first frame update
     void Start()

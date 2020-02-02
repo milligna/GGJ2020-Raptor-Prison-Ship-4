@@ -199,7 +199,7 @@ public class Computer : MonoBehaviour
 
 	private void PlayRebootSound ()
 	{
-		computerSpeaker.PlayOneShot (CM.rebootSound [Random.Range (0 CM.rebootSound.length)]);
+		computerSpeaker.PlayOneShot (CM.rebootSound [Random.Range (0, CM.rebootSound.Length)]);
 	}
 
 	public void RaptorInterferenceInterferedWith ()
