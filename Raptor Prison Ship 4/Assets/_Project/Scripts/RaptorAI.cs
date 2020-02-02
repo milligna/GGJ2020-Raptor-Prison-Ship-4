@@ -18,9 +18,11 @@ public class RaptorAI : MonoBehaviour
 
 	public float timeToEducate = 5f;
 
-	public GameObject RaptorHappyPlace;
+	public Computer RaptorHappyPlace;
 
 	public RaptorState _rState;
+
+	public PlayerControl playerInteracting;
 
 	[SerializeField]
 	private LinearProgressBarController pBar;
@@ -91,6 +93,12 @@ public class RaptorAI : MonoBehaviour
 		}
 
 		raptorAgent.SetDestination (targettedLocation.transform.position);
+
+		if (playerInteracting != null) {
+			playerInteracting.TooSlowRaptorMovedOn ();
+			playerInteracting = null;
+		}
+
 	}
 
     // Update is called once per frame
@@ -98,7 +106,7 @@ public class RaptorAI : MonoBehaviour
     {
 		_RaptorTimer -= Time.deltaTime;
 
-		if (_RaptorTimer < 0 && (_rState == RaptorState.Imprisoned || _rState == RaptorState.WastingTime)) {
+		if (_RaptorTimer < 0 &&  _rState == RaptorState.WastingTime) {
 			_rState = RaptorState.HeadingToTarget;
 		}
 
@@ -117,7 +125,9 @@ public class RaptorAI : MonoBehaviour
 			if (_RaptorTimer < 0) {
 				_rState = RaptorState.Content;
 				pBar.gameObject.SetActive (false);
-				raptorAgent.SetDestination (RaptorHappyPlace.transform.position);
+				raptorAgent.SetDestination (RaptorHappyPlace.gameObject.transform.position);
+				targettedComputer = RaptorHappyPlace;
+				targettedLocation = RaptorHappyPlace.gameObject;
 				// Need to tell the player that the lesson is over.
 				FindObjectOfType<PlayerControl> ().LessonOver ();
 			}

@@ -26,6 +26,8 @@ public class Computer : MonoBehaviour
 	[SerializeField]
 	private LinearProgressBarController pBar;
 
+	public DoorControl linkedDoor;
+
 	public int computerID;
 	public ComputerType computerType;
 	public float rebootTime = 5f;
@@ -57,6 +59,11 @@ public class Computer : MonoBehaviour
 		_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
     }
 
+	public void SetTimer (float thisTime)
+	{
+		_crashTimer = thisTime;
+	}
+
 	private void OnTriggerEnter (Collider other)
 	{
 		// If we've already clicked on the computer before being in range
@@ -67,12 +74,25 @@ public class Computer : MonoBehaviour
 				}
 			}
 		} else if(other.gameObject.layer == LayerMask.NameToLayer("Raptor")) {
-			if ( other.gameObject.GetComponent<RaptorAI> ().targettedComputer == this ) {
-				if (_state == ComputerState.WaitingToCrash) {
-					RaptorVisitsComputer (other.gameObject.GetComponent<RaptorAI> ());
+			RaptorAI tmpRaptor = other.gameObject.GetComponent<RaptorAI> ();
+			if (tmpRaptor.targettedComputer == this) {
+				if (tmpRaptor._rState == RaptorAI.RaptorState.Content) {
+					// Take permanent control of this computer.
+					if (currentRaptorUser != null) {
+						// There's another raptor at this computer already??
+						// Chase it away
+						RaptorInterferenceInterferedWith ();
+					}
+					// Set up this computer to be happy forever
+					TrainedRaptorAtComputer ();
+
 				} else {
-					// Computer crashed before the raptor could crash it, but after it targetted it
-					other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+					if (_state == ComputerState.WaitingToCrash) {
+						RaptorVisitsComputer (tmpRaptor);
+					} else {
+						// Computer crashed before the raptor could crash it, but after it targetted it
+						tmpRaptor.FindNewTarget ();
+					}
 				}
 			}
 		}
@@ -81,12 +101,22 @@ public class Computer : MonoBehaviour
 	private void OnTriggerStay (Collider other)
 	{
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Raptor")) {
-			if (other.gameObject.GetComponent<RaptorAI> ().targettedComputer == this)
+			RaptorAI tmpRaptor = other.gameObject.GetComponent<RaptorAI> ();
+			if (tmpRaptor.targettedComputer == this)
 			{
-				if (_state == ComputerState.WaitingToCrash) {
-					RaptorVisitsComputer (other.gameObject.GetComponent<RaptorAI> ());
-				} else if (_state == ComputerState.Crashed) {
-					other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+				if (tmpRaptor._rState == RaptorAI.RaptorState.Content) {
+					if (currentRaptorUser != null) {
+						RaptorInterferenceInterferedWith ();
+					}
+					// Set up this computer to be happy forever
+					TrainedRaptorAtComputer ();
+
+				} else {
+					if (_state == ComputerState.WaitingToCrash) {
+						RaptorVisitsComputer (other.gameObject.GetComponent<RaptorAI> ());
+					} else if (_state == ComputerState.Crashed) {
+						other.gameObject.GetComponent<RaptorAI> ().FindNewTarget ();
+					}
 				}
 			}
 		}
@@ -118,6 +148,10 @@ public class Computer : MonoBehaviour
 			SetComputerColour ( _state == ComputerState.WaitingToCrash ? Color.magenta : Color.yellow  );
 			_state = ComputerState.Crashed;
 
+			if (linkedDoor != null) {
+				linkedDoor.ReleaseTheRaptor ();
+			}
+
 			_crashTimer = CM.TimeFromCrashToExplode;
 			_timerLength = _crashTimer;
 			pBar.gameObject.SetActive (true);
@@ -125,6 +159,7 @@ public class Computer : MonoBehaviour
 			if (currentRaptorUser != null) {
 				currentRaptorUser.FindNewTarget ();
 				currentRaptorUser._rState = RaptorAI.RaptorState.HeadingToTarget;
+				currentRaptorUser = null;
 			}
 		}
 	}
@@ -145,6 +180,17 @@ public class Computer : MonoBehaviour
 			SetComputerColour (Color.green);
 			FindObjectOfType<PlayerControl> ()._pState = PlayerControl.playerState.RebootingComputer;
 		}
+	}
+
+	private void TrainedRaptorAtComputer ()
+	{
+		SetComputerColour (Color.cyan);
+		_crashTimer = 0;
+		_state = ComputerState.RaptorSafelyUsingComputer;
+		pBar.gameObject.SetActive (false);  // Ensure the progress bar gets hidden
+		CC.CancelCrashEffects ();
+		// So player can't click on computer anymore
+		this.gameObject.layer = LayerMask.NameToLayer ("NonComputer");
 	}
 
 	public void RaptorInterferenceInterferedWith ()
@@ -182,7 +228,6 @@ public class Computer : MonoBehaviour
 			} else if (_state == ComputerState.RaptorCrashingComputer) {
 				// Raptor has finished crashing the computer
 				crashComputer ();
-				currentRaptorUser.FindNewTarget ();
 			} else if (_state == ComputerState.Rebooting) {
 				SetComputerColour (Color.white);
 				CC.CancelCrashEffects ();
