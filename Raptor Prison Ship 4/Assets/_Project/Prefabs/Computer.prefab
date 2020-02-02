@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e7211c5bf474fa1b63e12c2ab902ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CC: {fileID: 0}
-  pBar: {fileID: 0}
+  CC: {fileID: -2308226624588467095}
+  pBar: {fileID: 9168497025818032179}
   linkedDoor: {fileID: 0}
   computerID: 0
   computerType: 0
@@ -426,3 +426,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5543022302008537601}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9168497025818032179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3733992192185895474, guid: cce637e57a66500439936fe2a5e4d330,
+    type: 3}
+  m_PrefabInstance: {fileID: 5543022302008537601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d87ab15e85dd4b9d7f42e13649df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
