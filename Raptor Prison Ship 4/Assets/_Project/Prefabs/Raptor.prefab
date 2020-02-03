@@ -274,6 +274,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2707826843642110550}
     m_Modifications:
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarAlertColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarAlertColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarAlertColor.b
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarColor.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: BarColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622706780913963112, guid: cce637e57a66500439936fe2a5e4d330,
+        type: 3}
+      propertyPath: Alert
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3733992192185895473, guid: cce637e57a66500439936fe2a5e4d330,
         type: 3}
       propertyPath: m_Name

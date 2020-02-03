@@ -379,7 +379,7 @@ Camera:
   far clip plane: 29.79
   field of view: 52
   orthographic: 1
-  orthographic size: 5.59
+  orthographic size: 7.8
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3153,6 +3153,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501780539}
     m_Modifications:
+    - target: {fileID: 187986254980466785, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076762614133279030, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -249
+      objectReference: {fileID: 0}
     - target: {fileID: 4530235139917691695, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3287,6 +3297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530235141128776131, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4530235141128776157, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
         type: 3}
@@ -3696,7 +3711,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 617519250}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1241322965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -6357,6 +6372,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 564815559}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1241322965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2762548630044935365, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 617519250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1241322966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241322965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &1248499036
 GameObject:
   m_ObjectHideFlags: 0

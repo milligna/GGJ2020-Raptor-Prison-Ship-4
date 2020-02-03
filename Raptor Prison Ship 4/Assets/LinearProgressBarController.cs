@@ -13,5 +13,8 @@ public class LinearProgressBarController : MonoBehaviour
     {
         if (progressBarCircle != null) { progressBarCircle.BarValue = progress; }
         if (progressBar != null) { progressBar.BarValue = progress; }
+
+		this.gameObject.transform.rotation = Quaternion.LookRotation (Camera.main.transform.forward, Camera.main.transform.up);
+
     }
 }

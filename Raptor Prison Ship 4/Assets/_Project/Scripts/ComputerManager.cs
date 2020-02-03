@@ -20,16 +20,16 @@ public class ComputerManager : MonoBehaviour
 	public string WinSceneName;
 	public string LoseSceneName;
 
-	private int numberOfRaptors = -1;
+	public int numberOfRaptors = -1;
 
 	public int _ContentRaptors = 0;
 
-	int ContentRaptors {
+	public int ContentRaptors {
 		get {
 			return _ContentRaptors;
 		}
 		set {
-			ContentRaptors = value;
+			_ContentRaptors = value;
 			if (_ContentRaptors == numberOfRaptors) {
 				EndGameWin ();
 			}

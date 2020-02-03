@@ -15,13 +15,13 @@ public class Demo : MonoBehaviour {
 
     void FixedUpdate () {
 		
-        if(Input.GetKey(KeyCode.KeypadPlus))
+		if(Input.GetKey(KeyCode.KeypadPlus) || Input.GetAxis("Vertical") > 0 )
         {
             Pb.BarValue += 1;
             PbC.BarValue += 1;
         }
 
-        if (Input.GetKey(KeyCode.KeypadMinus))
+		if (Input.GetKey(KeyCode.KeypadMinus)|| Input.GetAxis ("Vertical") < 0)
         {
             Pb.BarValue -= 1;
             PbC.BarValue -= 1;

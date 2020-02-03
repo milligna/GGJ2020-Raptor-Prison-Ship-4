@@ -87,10 +87,13 @@ public class PlayerControl : MonoBehaviour {
 		int result = currentRaptor.Tooled (toolID);
 
 		// Using the stick
-		if (result == 0)
+		if (result == 0) {
 			_pState = playerState.Moving;
+		}
 		else if (result == 1)   // Training the raptor properly
+		{
 			_pState = playerState.TrainingRaptor;
+		}
 		else if (result == -1)  // Not sure how we got here, but we did, so run away
 		{
 			_pState = playerState.Moving;
