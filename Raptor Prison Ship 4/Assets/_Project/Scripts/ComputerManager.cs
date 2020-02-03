@@ -38,6 +38,8 @@ public class ComputerManager : MonoBehaviour
 
 
 	public AudioClip [] rebootSound;
+	public AudioClip TypingSound;
+	public AudioClip [] ComputerToolSounds;
 
     // Start is called before the first frame update
     void Start()

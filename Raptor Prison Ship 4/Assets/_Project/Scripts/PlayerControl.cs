@@ -69,14 +69,14 @@ public class PlayerControl : MonoBehaviour {
 
 	public void UseComputerTool (int toolID)
 	{
-		// Just incase the computer blew up before a tool was selected
-		if (currentComputer._state == Computer.ComputerState.Exploding) {
+		int result = currentComputer.Tooled (toolID);
+
+		if (result == -1) {
 			_pState = playerState.Moving;
-		} else if (toolID == (int)currentComputer.computerType) {
-			currentComputer.rebootComputer ();
 		} else {
-			_pState = playerState.Moving;
+			currentComputer.rebootComputer ();
 		}
+
 		currentComputer = null;
 		targettedComputer = 0;
 		HideComputerTools ();

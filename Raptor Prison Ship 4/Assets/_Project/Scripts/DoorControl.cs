@@ -23,13 +23,23 @@ public class DoorControl : MonoBehaviour
 	private RaptorAI linkedRaptor;
 
 	private float timer = 0;
+
+	private AudioSource DoorAudio;
 	private Vector3 ClosedPosition;
+	[SerializeField]
+	private AudioClip DoorSoundClip;
 
 	private DoorState _doorState = DoorState.closed;
 
 	void Start ()
 	{
 		ClosedPosition = this.gameObject.transform.position;
+		DoorAudio = GetComponent<AudioSource> ();
+	}
+
+	public void PlayDoorSound ()
+	{
+		DoorAudio.PlayOneShot (DoorSoundClip);
 	}
 
 	public void ReleaseTheRaptor ()
@@ -44,7 +54,7 @@ public class DoorControl : MonoBehaviour
 		if (DoorPosition == DoorState.open) {
 			timer += Time.deltaTime;
 
-			if (timer > 3.0f && linkedRaptor._rState == RaptorAI.RaptorState.Imprisoned) {
+			if (timer > 2.0f && linkedRaptor._rState == RaptorAI.RaptorState.Imprisoned) {
 				linkedRaptor._rState = RaptorAI.RaptorState.HeadingToTarget;
 			}
 		}

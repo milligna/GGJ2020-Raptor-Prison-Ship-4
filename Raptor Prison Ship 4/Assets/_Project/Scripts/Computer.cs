@@ -144,6 +144,7 @@ public class Computer : MonoBehaviour
 			pBar.gameObject.SetActive (true);
 			raptor._rState = RaptorAI.RaptorState.FiddlingWithComputer;
 			currentRaptorUser = raptor;
+			computerSpeaker.PlayOneShot (CM.TypingSound);
 		}
 	}
 
@@ -217,6 +218,20 @@ public class Computer : MonoBehaviour
 		pBar.gameObject.SetActive (false);
 		currentRaptorUser = null;
 		_crashTimer = Random.Range (CM.MinDefaultComputerCrashTime, CM.MaxDefaultComputerCrashTime);
+	}
+
+	public int Tooled (int toolID)
+	{
+		// Just incase the computer blew up before a tool was selected
+		if (_state == Computer.ComputerState.Exploding) {
+			return -1;
+		} else if (toolID == (int)computerType) {
+			if(toolID < CM.ComputerToolSounds.Length)
+				computerSpeaker.PlayOneShot (CM.ComputerToolSounds [toolID]);
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
     // Update is called once per frame
