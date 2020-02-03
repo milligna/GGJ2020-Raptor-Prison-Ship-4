@@ -168,7 +168,6 @@ GameObject:
   - component: {fileID: 7080373054405946431}
   - component: {fileID: 3566288697380229318}
   - component: {fileID: 8184039674760051571}
-  - component: {fileID: 6513115139583981666}
   - component: {fileID: 4153301643732608343}
   m_Layer: 14
   m_Name: SM_Door
@@ -259,22 +258,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &6513115139583981666
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2973174688450405402}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 1827226128182048838, guid: 7d3e2551688a0ee48ad5f2517547aa10,
-    type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &4153301643732608343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,3 +272,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8184039674760051571}
   linkedRaptor: {fileID: 0}
+  DoorSoundClip: {fileID: 0}
