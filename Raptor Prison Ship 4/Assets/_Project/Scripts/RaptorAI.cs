@@ -77,7 +77,9 @@ public class RaptorAI : MonoBehaviour
 				_rState = RaptorState.Learning;
 				pBar.gameObject.SetActive (true);
 				_RaptorTimer = timeToEducate;
-				targettedComputer.RaptorInterferenceInterferedWith ();
+				if (targettedComputer != null) {	//If raptor finishes fiddling after you've brought up the raptor tool panel but before you selected an option.  Should make the panel disappear and adjust the player state when the raptor moves rather than leaving the player still able to press a button, but I'll get to that later perhaps.
+					targettedComputer.RaptorInterferenceInterferedWith ();
+				}
 				targettedComputer = null;
 				targettedLocation = null;
 				return 1;

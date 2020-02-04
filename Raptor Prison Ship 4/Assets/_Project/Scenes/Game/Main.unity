@@ -1333,6 +1333,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765993457}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332658135868238517, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Layer
@@ -1412,20 +1420,12 @@ PrefabInstance:
         type: 3}
       propertyPath: linkedRaptor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1085618298}
     - target: {fileID: 4153301643732608343, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: DoorSoundClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 80bdf071363c44a358958a83fa2546c2, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f1fe286b01f0d094787cf59233417944, type: 3}
@@ -2230,6 +2230,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be14eea3f13c524297b4432c6a3e758, type: 3}
+--- !u!114 &357310618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+    type: 3}
+  m_PrefabInstance: {fileID: 615251249}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c57907d3afa4d1c9cbbe376d349586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &358981524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 03743878060da024298e8b84a037445b,
@@ -2376,6 +2388,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1968865513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &382797990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743180801}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c57907d3afa4d1c9cbbe376d349586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &410064072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5be14eea3f13c524297b4432c6a3e758,
@@ -5439,6 +5463,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765993457}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332658135868238517, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Layer
@@ -5518,20 +5550,12 @@ PrefabInstance:
         type: 3}
       propertyPath: linkedRaptor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 357310618}
     - target: {fileID: 4153301643732608343, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: DoorSoundClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 80bdf071363c44a358958a83fa2546c2, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f1fe286b01f0d094787cf59233417944, type: 3}
@@ -5719,6 +5743,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1448280073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085618298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273766802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c57907d3afa4d1c9cbbe376d349586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1099301845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 48dbf81e1cb070c4499cbaeb7c6b7c33,
@@ -6983,6 +7019,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 564815559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1239538515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2644965820358321316, guid: 60dd13e94b7cf4ccc8ca3ac3ae771360,
+    type: 3}
+  m_PrefabInstance: {fileID: 362008845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c57907d3afa4d1c9cbbe376d349586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1241322965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2762548630044935365, guid: 9e8726bee3cdd5743ae623aed3ba0d1e,
@@ -8564,6 +8612,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765993457}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332658135868238517, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Layer
@@ -8643,20 +8699,12 @@ PrefabInstance:
         type: 3}
       propertyPath: linkedRaptor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 382797990}
     - target: {fileID: 4153301643732608343, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: DoorSoundClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 80bdf071363c44a358958a83fa2546c2, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f1fe286b01f0d094787cf59233417944, type: 3}
@@ -10304,6 +10352,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765993457}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332658135868238517, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Layer
@@ -10383,20 +10439,12 @@ PrefabInstance:
         type: 3}
       propertyPath: linkedRaptor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1239538515}
     - target: {fileID: 4153301643732608343, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: DoorSoundClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 80bdf071363c44a358958a83fa2546c2, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f1fe286b01f0d094787cf59233417944, type: 3}
@@ -12103,6 +12151,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1765993457}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 332658135868238517, guid: f1fe286b01f0d094787cf59233417944,
         type: 3}
       propertyPath: m_Layer
@@ -12217,14 +12273,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.749285
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 0a298bdfb358d446589221c09b9c5860, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

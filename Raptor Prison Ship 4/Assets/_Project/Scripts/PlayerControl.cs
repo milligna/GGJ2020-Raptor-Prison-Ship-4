@@ -121,13 +121,35 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		bool PlayerHasInput = false;
+		Ray rayToDestination = new Ray();
+
+		if (Input.touchCount > 0) {
+
+			// Just look at the first touch that's been released and use it
+			foreach (Touch iTouch in Input.touches) {
+				if (iTouch.phase == TouchPhase.Ended) {
+					PlayerHasInput = true;
+					rayToDestination = Camera.main.ScreenPointToRay (iTouch.position);
+					break;
+				}
+			}
+		}
+
+
 		if (Input.GetMouseButtonDown (0)) {
-			Ray raything = Camera.main.ScreenPointToRay (Input.mousePosition);
+			rayToDestination = Camera.main.ScreenPointToRay (Input.mousePosition);
+			PlayerHasInput = true;
+
+		}
+
+		if(PlayerHasInput)
+		{
 			RaycastHit rayResult;
 
 			if (_pState == playerState.Moving) {
 
-				if (Physics.Raycast (raything, out rayResult, 200f, ClickLayerMask)) {
+				if (Physics.Raycast (rayToDestination, out rayResult, 200f, ClickLayerMask)) {
 					player.SetDestination (rayResult.point);
 
 					if (rayResult.collider.gameObject.layer == LayerMask.NameToLayer ("Computer")) {
