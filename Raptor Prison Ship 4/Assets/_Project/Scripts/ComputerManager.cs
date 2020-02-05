@@ -12,7 +12,7 @@ public class ComputerManager : MonoBehaviour
 	public float MaxDefaultComputerCrashTime = 45f;
 	public float TimeToCrashWithRaptor = 5f;
 	public float TimeFromCrashToExplode = 30f;
-	public float TimeToEndGame = 7f;
+	public float TimeToEndGame = 2f;
 
 	private List<Computer> NonCrashedComputers;
 	private List<Computer> CrashedComputers;
@@ -20,9 +20,9 @@ public class ComputerManager : MonoBehaviour
 	public string WinSceneName;
 	public string LoseSceneName;
 
-	public int numberOfRaptors = -1;
+	private int numberOfRaptors = -1;
 
-	public int _ContentRaptors = 0;
+	private int _ContentRaptors = 0;
 
 	public int ContentRaptors {
 		get {

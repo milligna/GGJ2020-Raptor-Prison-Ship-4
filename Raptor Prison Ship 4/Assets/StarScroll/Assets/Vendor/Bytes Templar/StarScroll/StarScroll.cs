@@ -23,6 +23,7 @@ public class StarScroll : MonoBehaviour
     private GameObject _text_container;
     private Text _text;
     public int SecondsToStart = 70;  // added by kevin
+	public string NextScene = "Menu";	// added by Peter
 
     public void Start()
     {
@@ -93,7 +94,7 @@ public class StarScroll : MonoBehaviour
     {
         yield return new WaitForSeconds(SecondsToStart);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(NextScene);
     }
 }
 //

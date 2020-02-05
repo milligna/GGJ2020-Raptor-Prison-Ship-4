@@ -249,6 +249,7 @@ public class Computer : MonoBehaviour
 				_state = ComputerState.Exploding;
 				CC.TriggerExplosionEffect ();
 				SetComputerColour (Color.black);
+				pBar.gameObject.SetActive (false);
 
 				// If user was in the process of selecting a tool to use on the computer, need to reset the player
 				PlayerControl PC = FindObjectOfType<PlayerControl> ();
