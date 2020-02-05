@@ -23,7 +23,7 @@ public class StarScroll : MonoBehaviour
     private GameObject _text_container;
     private Text _text;
     public int SecondsToStart = 70;  // added by kevin
-	public string NextScene = "Menu";	// added by Peter
+	public string NextScene = "Main";	// added by Peter (chnaged to "main" by Kevin :) )
 
     public void Start()
     {
