@@ -5030,6 +5030,7 @@ MonoBehaviour:
     David Weaver - Music'
   FontSize: 24
   SecondsToStart: 60
+  NextScene: Menu
 --- !u!4 &1429732754
 Transform:
   m_ObjectHideFlags: 0

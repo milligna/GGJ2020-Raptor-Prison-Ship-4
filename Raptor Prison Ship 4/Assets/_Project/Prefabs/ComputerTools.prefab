@@ -110,8 +110,8 @@ RectTransform:
   m_Father: {fileID: 4530235141128776130}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.33}
+  m_AnchorMin: {x: 0.1, y: 0}
+  m_AnchorMax: {x: 0.9, y: 0.33}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2076762614133279030}
   - component: {fileID: 4046470061746777336}
   - component: {fileID: 995434680650327652}
+  - component: {fileID: 8728805581398691637}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -224,6 +225,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8728805581398691637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762548630044935365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1.1635435
 --- !u!1 &4530235139917691689
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +251,7 @@ GameObject:
   - component: {fileID: 4530235139917691693}
   - component: {fileID: 4530235139917691692}
   - component: {fileID: 4530235139917691695}
+  - component: {fileID: 7498751878209541368}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -354,6 +370,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7498751878209541368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530235139917691689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &4530235140029706673
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +396,7 @@ GameObject:
   - component: {fileID: 4530235140029706677}
   - component: {fileID: 4530235140029706676}
   - component: {fileID: 4530235140029706679}
+  - component: {fileID: 1574425830390095344}
   m_Layer: 5
   m_Name: Button0
   m_TagString: Untagged
@@ -484,6 +515,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1574425830390095344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530235140029706673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &4530235140249165919
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +618,7 @@ GameObject:
   - component: {fileID: 4530235140387261826}
   - component: {fileID: 4530235140387261853}
   - component: {fileID: 4530235140387261852}
+  - component: {fileID: 7053491047470030612}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -691,6 +737,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7053491047470030612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530235140387261854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &4530235141042312944
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +992,7 @@ GameObject:
   - component: {fileID: 4530235141722738671}
   - component: {fileID: 4530235141722738670}
   - component: {fileID: 4530235141722738665}
+  - component: {fileID: 7090225715765200094}
   m_Layer: 5
   m_Name: Button2
   m_TagString: Untagged
@@ -1050,6 +1111,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7090225715765200094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530235141722738667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &4530235141774858427
 GameObject:
   m_ObjectHideFlags: 0
