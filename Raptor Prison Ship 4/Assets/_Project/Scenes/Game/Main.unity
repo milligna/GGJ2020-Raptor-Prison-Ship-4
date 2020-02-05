@@ -496,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103264405}
   m_LocalRotation: {x: 0.25632253, y: 0.25044867, z: -0.065290146, w: 0.93129563}
-  m_LocalPosition: {x: 4.76, y: 6.44, z: -1.71}
+  m_LocalPosition: {x: 4.534, y: 6.83, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 114582088}
@@ -538,7 +538,7 @@ Camera:
   far clip plane: 29.79
   field of view: 52
   orthographic: 1
-  orthographic size: 8.68
+  orthographic size: 6.14
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -8353,6 +8353,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 289154149}
     m_Modifications:
+    - target: {fileID: -8865327983114141644, guid: 6ecc3bbe466104839a5e2379e4196dd3,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 1800421250327628403, guid: 6ecc3bbe466104839a5e2379e4196dd3,
         type: 3}
       propertyPath: m_Name
@@ -10596,6 +10601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TimeToEndGame
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041770129634876545, guid: 2bb05ea81070d44448d908b7885aaef4,
+        type: 3}
+      propertyPath: TimeToCrashWithRaptor
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5041770129634876550, guid: 2bb05ea81070d44448d908b7885aaef4,
         type: 3}
