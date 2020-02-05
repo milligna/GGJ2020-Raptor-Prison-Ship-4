@@ -5013,6 +5013,7 @@ MonoBehaviour:
     give the raptors the help they need to become productive members of the community..."
   FontSize: 24
   SecondsToStart: 50
+  NextScene: Main
 --- !u!4 &1429732754
 Transform:
   m_ObjectHideFlags: 0
