@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _RaptorTimer: 0
-  timeToEducate: 5
+  timeToEducate: 3
   RaptorHappyPlace: {fileID: 0}
   _rState: 0
   playerInteracting: {fileID: 0}

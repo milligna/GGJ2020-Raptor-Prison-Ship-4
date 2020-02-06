@@ -116,7 +116,7 @@ MonoBehaviour:
   linkedDoor: {fileID: 0}
   computerID: 0
   computerType: 0
-  rebootTime: 5
+  rebootTime: 3
   _state: 0
   _crashTimer: 0
 --- !u!135 &4517472496293523106
