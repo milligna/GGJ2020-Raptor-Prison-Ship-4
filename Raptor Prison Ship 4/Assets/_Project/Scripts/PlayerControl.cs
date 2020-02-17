@@ -143,8 +143,7 @@ public class PlayerControl : MonoBehaviour {
 
 		}
 
-		if(PlayerHasInput)
-		{
+		if (PlayerHasInput) {
 			RaycastHit rayResult;
 
 			if (_pState == playerState.Moving) {
@@ -176,7 +175,15 @@ public class PlayerControl : MonoBehaviour {
 					} else {
 						targettedComputer = 0;
 						currentComputer = null;
+						currentRaptor = null;
 					}
+				}
+			}
+		} else if (_pState == playerState.Moving && currentRaptor != null) {
+			if ((currentRaptor.gameObject.transform.position - this.gameObject.transform.position).sqrMagnitude < 4) {
+				if (currentRaptor._rState == RaptorAI.RaptorState.FiddlingWithComputer) {
+					ShowRaptorTools ();
+					currentRaptor.playerInteracting = this;
 				}
 			}
 		}

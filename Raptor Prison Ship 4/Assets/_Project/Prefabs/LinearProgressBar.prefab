@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 3622706780913963112}
+  progressBarCircle: {fileID: 0}
   progress: 0
 --- !u!1 &3733992193514672096
 GameObject:

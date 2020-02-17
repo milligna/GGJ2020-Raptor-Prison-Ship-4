@@ -83,8 +83,8 @@ public class Computer : MonoBehaviour
 		} else if(other.gameObject.layer == LayerMask.NameToLayer("Raptor")) {
 			RaptorAI tmpRaptor = other.gameObject.GetComponent<RaptorAI> ();
 			if (tmpRaptor.targettedComputer == this) {
-				if (tmpRaptor._rState == RaptorAI.RaptorState.Content) {
-					// Take permanent control of this computer.
+				if (tmpRaptor._rState == RaptorAI.RaptorState.Content && _state != ComputerState.Exploding) {
+					// Take permanent control of this computer. But not if computer has already exploded and we're in the few seconds wait for the game to end
 					if (currentRaptorUser != null) {
 						// There's another raptor at this computer already??
 						// Chase it away
@@ -224,6 +224,8 @@ public class Computer : MonoBehaviour
 	{
 		// Just incase the computer blew up before a tool was selected
 		if (_state == Computer.ComputerState.Exploding) {
+			return -1;
+		} else if ( _state == ComputerState.RaptorSafelyUsingComputer) {
 			return -1;
 		} else if (toolID == (int)computerType) {
 			if(toolID < CM.ComputerToolSounds.Length)
